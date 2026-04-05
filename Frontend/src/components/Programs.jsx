@@ -5,7 +5,7 @@ const Programs = () => {
   const { COURSES } = useApp();
 
   return (
-    <section id="courses" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="courses" className="py-20 bg-linear-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <span className="inline-block bg-indigo-50 border border-indigo-200 text-indigo-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
@@ -19,7 +19,7 @@ const Programs = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {COURSES.map((c) => (
             <div key={c.title} className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg transition-shadow">
-              <div className={`relative h-44 bg-gradient-to-br ${c.bg} flex items-center justify-center`}>
+              <div className={`relative h-44 bg-linear-to-br ${c.bg} flex items-center justify-center`}>
                 <span className="text-white text-5xl opacity-30">💻</span>
                 <span className={`absolute top-3 right-3 ${c.levelColor} text-white text-xs font-semibold px-3 py-1 rounded-full`}>
                   {c.level}

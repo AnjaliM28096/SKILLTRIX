@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-slate-50 to-white">
+    <section id="home" className="pt-24 pb-16 bg-linear-to-br from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1">
           <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 rounded-full px-4 py-1.5 mb-6">
@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex-1 relative">
-          <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-100 h-72 md:h-80 flex items-center justify-center">
+          <div className="rounded-2xl overflow-hidden bg-linear-to-br from-indigo-100 to-purple-100 h-72 md:h-80 flex items-center justify-center">
             <div className="text-center opacity-90">
               <div className="text-6xl mb-2">
                 <img src="/public/images/data-science.png" alt="" />
