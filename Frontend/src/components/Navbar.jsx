@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
 const Navbar = () => {
   const { NAV_LINKS } = useApp();
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // Adjust to trigger in the middle of the viewport
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    NAV_LINKS.forEach((link) => {
+      const element = document.getElementById(link.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      NAV_LINKS.forEach((link) => {
+        const element = document.getElementById(link.id);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, [NAV_LINKS]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -14,8 +45,18 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((l) => (
-            <a key={l.id} href={`/#${l.id}`} className="text-sm text-gray-600 hover:text-indigo-600 transition-colors font-medium">
+            <a 
+              key={l.id} 
+              href={`/#${l.id}`} 
+              className={`text-sm transition-all duration-300 font-medium relative group ${
+                activeSection === l.id ? 'text-indigo-600' : 'text-gray-600 hover:text-indigo-600'
+              }`}
+            >
               {l.name}
+              {/* Active underline indicator */}
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                activeSection === l.id ? 'w-full' : 'w-0 group-hover:w-full'
+              }`} />
             </a>
           ))}
         </div>

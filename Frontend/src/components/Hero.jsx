@@ -25,9 +25,11 @@ const Hero = () => {
         </div>
         <div className="flex-1 relative">
           <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-indigo-100 to-purple-100 h-72 md:h-80 flex items-center justify-center">
-            <div className="text-center opacity-60">
-              <div className="text-6xl mb-2">💻</div>
-              <p className="text-gray-500 text-sm">Students collaborating</p>
+            <div className="text-center opacity-90">
+              <div className="text-6xl mb-2">
+                <img src="/public/images/data-science.png" alt="" />
+              </div>
+              
             </div>
           </div>
           {/* Floating stats */}

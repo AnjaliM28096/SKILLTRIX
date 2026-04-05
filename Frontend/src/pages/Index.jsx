@@ -6,6 +6,8 @@ import Features from '../components/Features';
 import TechStack from '../components/TechStack';
 import Process from '../components/Process';
 import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
+import CTA from '../components/CTA';
 
 const Index = () => {
   return (
@@ -17,6 +19,8 @@ const Index = () => {
       <TechStack />
       <Process />
       <Testimonials />
+      <CTA />
+      <FAQ />
     </>
   );
 };
