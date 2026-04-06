@@ -15,7 +15,7 @@ export const AppProvider = ({ children }) => {
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Courses", id: "courses" },
-    { name: "Career", id: "career" },
+    { name: "Career", id: "career", href: "/career" },
     { name: "Success Stories", id: "stories" },
     { name: "Contact Us", id: "contact" },
   ];

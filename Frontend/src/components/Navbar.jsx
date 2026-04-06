@@ -47,6 +47,7 @@ const Navbar = () => {
           <span className="text-xl font-bold text-indigo-600">SkillTrix</span>
         </Link>
 
+
         {/* NAV LINKS */}
         <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
           {/* HOME */}
@@ -109,6 +110,30 @@ const Navbar = () => {
             </a>
           ))}
         </div> */}
+=======
+        <div className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((l) => {
+            const linkClass = `text-sm transition-all duration-300 font-medium relative group ${
+              activeSection === l.id ? 'text-indigo-600' : 'text-gray-600 hover:text-indigo-600'
+            }`;
+            const underline = (
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-indigo-600 transition-all duration-300 ${
+                activeSection === l.id ? 'w-full' : 'w-0 group-hover:w-full'
+              }`} />
+            );
+            return l.href ? (
+              <Link key={l.id} to={l.href} className={linkClass}>
+                {l.name}
+                {underline}
+              </Link>
+            ) : (
+              <a key={l.id} href={`/#${l.id}`} className={linkClass}>
+                {l.name}
+                {underline}
+              </a>
+            );
+          })}
+        </div>
         <div className="flex items-center gap-3">
           <Link
             to="/login"
