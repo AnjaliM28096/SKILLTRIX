@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 /* ── shared check icon ── */
 const CheckIcon = () => (
-  <svg className="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none">
+  <svg className="w-5 h-5 shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none">
     <circle cx="10" cy="10" r="10" fill="#ede9fe" />
     <path d="M6 10.5l2.5 2.5 5-5" stroke="#6366f1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
@@ -13,7 +13,7 @@ const CheckIcon = () => (
 const FEATURES = [
   {
     icon: (
-      <svg className="w-10 h-10 flex-shrink-0" viewBox="0 0 40 40" fill="none">
+      <svg className="w-10 h-10 shrink-0" viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#ede9fe" />
         <path d="M13 17h14v10a2 2 0 01-2 2H15a2 2 0 01-2-2V17z" fill="#6366f1" opacity=".2" />
         <rect x="17" y="13" width="6" height="4" rx="1" stroke="#6366f1" strokeWidth="1.5" />
@@ -32,7 +32,7 @@ const FEATURES = [
   },
   {
     icon: (
-      <svg className="w-10 h-10 flex-shrink-0" viewBox="0 0 40 40" fill="none">
+      <svg className="w-10 h-10 shrink-0" viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#ede9fe" />
         <circle cx="20" cy="17" r="4" stroke="#6366f1" strokeWidth="1.5" />
         <path d="M12 29c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#6366f1" strokeWidth="1.5" strokeLinecap="round" />
@@ -48,7 +48,7 @@ const FEATURES = [
   },
   {
     icon: (
-      <svg className="w-10 h-10 flex-shrink-0" viewBox="0 0 40 40" fill="none">
+      <svg className="w-10 h-10 shrink-0" viewBox="0 0 40 40" fill="none">
         <rect width="40" height="40" rx="10" fill="#ede9fe" />
         <path d="M11 27l6-6 4 4 8-10" stroke="#6366f1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         <circle cx="29" cy="15" r="2" fill="#6366f1" />
@@ -126,7 +126,7 @@ const Career = () => {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative h-[240px] mt-15 w-full overflow-hidden flex items-center">
+      <section className="relative h-60 mt-15 w-full overflow-hidden flex items-center">
         {/* Background Image (Covering entire hero) */}
         <div className="absolute inset-0 z-0">
           <img
@@ -144,7 +144,7 @@ const Career = () => {
             <h1 className="text-[3.8rem] font-bold text-[#1a1a2e] leading-none mb-3">
               Career
             </h1>
-            <p className="text-white font-bold text-[1.1rem] leading-snug font-medium">
+            <p className="text-white  text-[1.1rem] leading-snug font-medium">
               Learn, gain real experience, and move towards<br />
               your first job with Skilltrix
             </p>
@@ -210,7 +210,7 @@ const Career = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-5xl mx-auto flex-wrap">
           {STEPS.map((step, i) => (
             <React.Fragment key={step.num}>
-              <div className="bg-white border border-gray-200 rounded-2xl p-5 w-full md:w-48 min-h-[150px] flex flex-col gap-3 shrink-0 transition-all duration-200 hover:shadow-xl hover:shadow-indigo-100 hover:-translate-y-1 hover:border-indigo-200">
+              <div className="bg-white border border-gray-200 rounded-2xl p-5 w-full md:w-48 min-h-37.5 flex flex-col gap-3 shrink-0 transition-all duration-200 hover:shadow-xl hover:shadow-indigo-100 hover:-translate-y-1 hover:border-indigo-200">
                 <div className="w-8 h-8 rounded-full bg-indigo-600 text-white text-sm font-bold flex items-center justify-center shrink-0">
                   {step.num}
                 </div>
@@ -221,7 +221,7 @@ const Career = () => {
                 <div className="flex justify-end">{step.icon}</div>
               </div>
               {i < STEPS.length - 1 && (
-                <svg className="w-9 h-4 flex-shrink-0 opacity-50 hidden md:block" viewBox="0 0 36 16" fill="none">
+                <svg className="w-9 h-4 shrink-0 opacity-50 hidden md:block" viewBox="0 0 36 16" fill="none">
                   <path d="M0 8h30M24 2l8 6-8 6" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               )}
@@ -256,7 +256,7 @@ const Career = () => {
         </div>
 
         {/* right CTA */}
-        <div className="bg-gradient-to-br from-violet-50 to-indigo-100 border border-indigo-200 rounded-2xl p-10 flex flex-col items-center gap-6 text-center">
+        <div className="bg-linear-to-br from-violet-50 to-indigo-100 border border-indigo-200 rounded-2xl p-10 flex flex-col items-center gap-6 text-center">
           <p className="text-lg font-semibold text-gray-900 leading-relaxed">
             Start your journey with Skilltrix and improve<br />your skills step by step.
           </p>
